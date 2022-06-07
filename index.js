@@ -10,7 +10,7 @@ fetch ('https://api.data.gov.sg/v1/environment/psi')
                     no_of_rows =Object.keys(item).length
 
                     var name = document.getElementById("h1")
-                    name.innerHTML= "<h3> PSI Info taken at "+ date[0] +" on "+ time[0]+"</h3>"
+                    name.innerHTML= "<h1> PSI Info taken at "+ date[0] +" on "+ time[0]+"</h1>"
 
                     for (var i=0; i<no_of_rows; i++)
                     {
@@ -29,7 +29,7 @@ fetch ('https://api.data.gov.sg/v1/environment/psi')
                         nameofbox = Object.keys(item)[i]
                         console.log(item)
                         box0.innerHTML="<b>"+nameofbox+"</b>"
-                        box1.innerHTML="<b>"+item[nameofbox].national+"</b>"
+                        box1.innerHTML="<th scope='row'>"+item[nameofbox].national +"</th>"
                         box2.innerHTML="<b>"+item[nameofbox].central+"</b>"
                         box3.innerHTML="<b>"+item[nameofbox].west+"</b>"
                         box4.innerHTML="<b>"+item[nameofbox].east+"</b>"
