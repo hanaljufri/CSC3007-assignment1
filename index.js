@@ -4,18 +4,17 @@ fetch ('https://api.data.gov.sg/v1/environment/psi')
                     //console.log(data);
                     let item=data.items[0].readings;
                     date = data.items[0].update_timestamp
-                    date = date.split("T")
-                    time = date[1].split("+")
+                    //date = date.split("T")
+                    //time = date[1].split("+")
+                    newdate =  new Date(date)
                     //console.log(item[i].o3_sub_index.west)
                     no_of_rows =Object.keys(item).length
 
-                    var name = document.getElementById("h1")
-                    name.innerHTML= "<h1> PSI Info taken at "+ date[0] +" on "+ time[0]+"</h1>"
+                    var name = document.getElementById("date")
+                    name.innerHTML= "<p id='date'>Last updated on "+ newdate.toDateString() +" at "+ newdate.toLocaleTimeString('en-US')+"</p>"
 
                     for (var i=0; i<no_of_rows; i++)
                     {
-                        //var obj = Object.keys(item)[i]
-                        
                         var table = document.getElementById("psitable");
                         var row = table.insertRow(i+1);
                         box6 = row.insertCell(0);
