@@ -29,11 +29,15 @@ fetch ('https://api.data.gov.sg/v1/environment/psi')
                         console.log(item)
                         box0.innerHTML="<b>"+nameofbox+"</b>"
                         box1.innerHTML="<th scope='row'>"+item[nameofbox].national +"</th>"
-                        box2.innerHTML="<b>"+item[nameofbox].central+"</b>"
-                        box3.innerHTML="<b>"+item[nameofbox].west+"</b>"
-                        box4.innerHTML="<b>"+item[nameofbox].east+"</b>"
-                        box5.innerHTML="<b>"+item[nameofbox].north+"</b>"
-                        box6.innerHTML="<b>"+item[nameofbox].south+"</b>"
+                        box2.innerHTML="<th scope='row'>"+item[nameofbox].central+"</th>"
+                        box3.innerHTML="<th scope='row'>"+item[nameofbox].west+"</th>"
+                        box4.innerHTML="<th scope='row'>"+item[nameofbox].east+"</th>"
+                        box5.innerHTML="<th scope='row'>"+item[nameofbox].north+"</th>"
+                        box6.innerHTML="<th scope='row'>"+item[nameofbox].south+"</th>"
 
                     }
                 });
+
+                function refresh(){
+                    window.location.reload("Refresh")
+                  }
